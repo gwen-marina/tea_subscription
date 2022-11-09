@@ -35,13 +35,29 @@ To set up the project on your local machine, complete the following steps:
 
 <!-- Schema -->
 ## Schema
-
+<img width="744" alt="location" src="https://raw.githubusercontent.com/gwen-marina/tea_subscription/main/repo_images/schema.png">
 
 
 <!-- API Endpoints -->
 ## API Endpoints
 #### Create a Tea Subscription for a Customer
 `POST /api/v1/subscribe`<br
+
+  customer: {
+          id: 1,
+          first_name: "Rwendolyn",
+          last_name: "Guiz",
+          street: "1234 Turing Avenue",
+          city: "Anytown",
+          state: "Arizona",
+          zip_code: "12345"
+          },
+        subscription: {
+          name: "Basic tea",
+          status: "active",
+          price: 10.00,
+          frequency: "weekly",
+          }
 
 `DELETE /api/v1/unsubscribe`<br>
 
