@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       
       delete "/unsubscribe", to: "customer_subscriptions#destroy"
 
-      # get "/subscriptions/:customer_id", to: "customer_subscriptions#index"
+      get "/customers/:customer_id/subscriptions", to: "customer_subscriptions#index"
     end
   end
 end

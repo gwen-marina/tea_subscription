@@ -1,10 +1,9 @@
 class Api::V1::CustomerSubscriptionsController < ApplicationController 
 
-  # def index
-  #   customer_subscriptions = CustomerSubscription.where(customer_id: params[:customer_id])
-
-  #   customer_subscription_json_response(customer_subscriptions)
-  # end
+  def index
+    customer_subscriptions = CustomerSubscription.where(customer_id: params[:customer_id])
+    render json: CustomerSubscriptionSerializer.subscription_list(customer_subscriptions), status: 200
+  end
 
   def create
     customer_subscription = CustomerSubscription.new(cust_subscription_params) 
@@ -18,7 +17,7 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
    def destroy 
     customer_subscription = CustomerSubscription.find_by(cust_subscription_params)
     customer_subscription.destroy
-    render status: 204
+    render text: "Your subscription has been successfully deleted", status: 204
   end
 
     private
