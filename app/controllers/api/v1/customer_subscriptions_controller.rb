@@ -9,6 +9,11 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     end
   end
 
+   def destroy 
+    customer_subscription = CustomerSubscription.find_by(cust_subscription_params)
+    customer_subscription.destroy
+    render status: 204
+  end
 
     private
 
