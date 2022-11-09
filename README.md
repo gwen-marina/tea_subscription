@@ -42,7 +42,7 @@ To set up the project on your local machine, complete the following steps:
 ## API Endpoints
 #### Create a Tea Subscription for a Customer
 `POST /api/v1/subscribe`<br
-
+```
   customer: {
           id: 1,
           first_name: "Rwendolyn",
@@ -58,7 +58,7 @@ To set up the project on your local machine, complete the following steps:
           price: 10.00,
           frequency: "weekly",
           }
-
+```
 `DELETE /api/v1/unsubscribe`<br>
 
 `GET /api/v1/subscriptions/1`<br>
