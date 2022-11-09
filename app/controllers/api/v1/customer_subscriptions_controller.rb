@@ -10,7 +10,6 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     customer_subscription = CustomerSubscription.new(cust_subscription_params) 
     if customer_subscription.save
       render json: CustomerSubscriptionSerializer.new_subscription(customer_subscription), status: 201
-      # render status: 201
     else
       render status: 400
     end

@@ -27,7 +27,7 @@ This is a Rails RESTful API app that is designed to create, update, and delete t
 To set up the project on your local machine, complete the following steps:
 1. Ensure you have the correct versions of both Ruby(2.7.4 or later) and Rails(5.2.8 or later) by running `ruby -v` and `rails -v` from your command line.<br>
 2. Clone the repo:
-```git clone git@github.com:sdecesari/tea_subscription_service.git``` &mdash; for SSH
+```git clone git@github.com:gwen-marina/tea_subscription.git``` &mdash; for SSH
 4. Install gems using `bundle install`
 5. Set up local database: `rails db:{drope,create,migrate,seed}
 6. Launch your server: `rails s`
@@ -41,7 +41,7 @@ To set up the project on your local machine, complete the following steps:
 <!-- API Endpoints -->
 ## API Endpoints
 #### Create a Tea Subscription for a Customer
-`POST /api/v1/subscribe`<br
+`POST /api/v1/subscribe`
 ```
   customer: {
           id: 1,
