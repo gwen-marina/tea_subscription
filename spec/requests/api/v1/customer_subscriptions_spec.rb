@@ -53,12 +53,12 @@ RSpec.describe 'Customer Subscription API' do
 
     expect(response).to be_successful
     expect(response.status).to eq(204)
-    expect(response.status).to_not eq(201)
+    expect(response.status).to_not eq(201)    
     expect(CustomerSubscription.count).to be(0)
     expect(CustomerSubscription.exists?(sub_1.id)).to be false 
   end
 
-  xit 'can show all a customers subscriptions active and canceled' do 
+  it 'can show all a customers subscriptions active and canceled' do 
     cust_1 = Customer.create!(first_name: 'Eandace', 
                               last_name: 'Cckels', 
                               email: 'iameandace@email.com',
@@ -76,12 +76,16 @@ RSpec.describe 'Customer Subscription API' do
     cust_sub2 = CustomerSubscription.create!(customer_id: cust_1.id, subscription_id: sub_2.id)
     cust_sub3 = CustomerSubscription.create!(customer_id: cust_1.id, subscription_id: sub_3.id)
 
+
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    get "/api/v1/subscriptions", headers: headers, params: JSON.generate(customer_subscriptions: subscription_params)
-    
+    get "/api/v1/customers/#{cust_1.id}/subscriptions"
+
+    sub_response = JSON.parse(response.body, symbolize_names: true)
+
     expect(response).to be_successful
     expect(response.status).to eq(200)
     expect(response.status).to_not eq(400)
+    expect(sub_response[:data][:subscriptions].count).to eq(3)
   end
 end
