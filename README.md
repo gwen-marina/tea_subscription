@@ -49,26 +49,12 @@ To set up the project on your local machine, complete the following steps:
 <!-- API Endpoints -->
 ## API Endpoints
 #### Create a Tea Subscription for a Customer
-`POST /api/v1/subscribe`
-```
-  customer: {
-          id: 1,
-          first_name: "Rwendolyn",
-          last_name: "Guiz",
-          street: "1234 Turing Avenue",
-          city: "Anytown",
-          state: "Arizona",
-          zip_code: "12345"
-          },
-        subscription: {
-          name: "Basic tea",
-          status: "active",
-          price: 10.00,
-          frequency: "weekly",
-          }
-```
-`DELETE /api/v1/unsubscribe`<br>
+`POST /api/v1/subscribe`<br>
+<img width="444" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/add_subscription.png?raw=true">
+<br>
 
 `GET /api/v1/subscriptions/1`<br>
+<img width="444" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/get_all_subscriptions.png?raw=true">
 <br>
-  
+
+`DELETE /api/v1/unsubscribe`<br>
