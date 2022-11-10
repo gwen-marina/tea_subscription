@@ -21,6 +21,15 @@ This is a Rails RESTful API app that is designed to create, update, and delete t
 ## Built With
 [<img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white"/>](https://www.ruby-lang.org/en/) **Version 2.7.4**<br>
 [<img src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white"/>](https://rubyonrails.org/) **Version 5.2.8**<br>
+[<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white"/>](https://www.postman.com/product/what-is-postman/)<br>
+
+## Gems Used
+ <ol>
+<li>rspec</li>
+<li>rspec-rails</li>
+<li>pry</li>
+<li>shoulda-matchers</li>
+</ol>
 
 <!-- Setup -->
 ## Setup
@@ -31,7 +40,6 @@ To set up the project on your local machine, complete the following steps:
 4. Install gems using `bundle install`
 5. Set up local database: `rails db:{drope,create,migrate,seed}
 6. Launch your server: `rails s`
-
 
 <!-- Schema -->
 ## Schema

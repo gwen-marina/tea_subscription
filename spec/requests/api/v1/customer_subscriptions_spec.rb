@@ -45,17 +45,15 @@ RSpec.describe 'Customer Subscription API' do
 
     cust_sub = CustomerSubscription.create!(customer_id: cust_1.id, subscription_id: sub_1.id)
 
-    subscription_params = ({customer_id: cust_1.id, subscription_id: sub_1.id})
+    subscription_params = ({customer_id: cust_1.id, subscription_id: sub_1.id, status: 'canceled'})
 
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    delete "/api/v1/unsubscribe", headers: headers, params: JSON.generate(customer_subscriptions: subscription_params)
+    post "/api/v1/unsubscribe", headers: headers, params: JSON.generate(customer_subscriptions: subscription_params)
 
     expect(response).to be_successful
     expect(response.status).to eq(204)
-    expect(response.status).to_not eq(201)    
-    expect(CustomerSubscription.count).to be(0)
-    expect(CustomerSubscription.exists?(sub_1.id)).to be false 
+    expect(response.status).to_not eq(201)   
   end
 
   it 'can show all a customers subscriptions active and canceled' do 

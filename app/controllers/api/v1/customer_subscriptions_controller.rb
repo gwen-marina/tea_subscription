@@ -14,15 +14,16 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     end
   end
 
-   def destroy 
-    customer_subscription = CustomerSubscription.find_by(cust_subscription_params)
-    customer_subscription.destroy
-    render text: "Your subscription has been successfully deleted", status: 204
+   def update
+    customer_subscription = CustomerSubscription.find_by(customer_id: params[:customer_subscriptions][:customer_id], subscription_id: params[:customer_subscriptions][:subscription_id])
+    customer_subscription.subscription.status = 'canceled'
+    customer_subscription.subscription.update(status: params[:customer_subscriptions][:status])
+    render status: 204, json: { message: "Your subscription has been deleted" }
   end
 
     private
 
   def cust_subscription_params
-    params.require(:customer_subscriptions).permit(:customer_id, :subscription_id)
+    params.require(:customer_subscriptions).permit(:customer_id, :subscription_id, :status)
   end
 end
