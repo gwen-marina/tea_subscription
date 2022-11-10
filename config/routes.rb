@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post "/subscribe", to: "customer_subscriptions#create"
       
-      delete "/unsubscribe", to: "customer_subscriptions#destroy"
+      post "/unsubscribe", to: "customer_subscriptions#update"
 
       get "/customers/:customer_id/subscriptions", to: "customer_subscriptions#index"
     end
