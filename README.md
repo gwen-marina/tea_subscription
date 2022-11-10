@@ -15,7 +15,7 @@
 
 <!-- PROJECT OVERVIEW -->
 ## Project Overview
-This is a Rails RESTful API app that is designed to create, update, and delete tea subscriptions for customers.
+Tea Subscription is a Rails RESTful API app. The app exposes API endpoints that allow customers to add a subscription to their account, cancel an active subscription, and see all of their subscriptions, both active and canceled.
 
 <!-- Built With -->
 ## Built With
@@ -38,7 +38,7 @@ To set up the project on your local machine, complete the following steps:
 2. Clone the repo:
 ```git clone git@github.com:gwen-marina/tea_subscription.git``` &mdash; for SSH
 4. Install gems using `bundle install`
-5. Set up local database: `rails db:{drope,create,migrate,seed}
+5. Set up local database: `rails db:{drop,create,migrate,seed}
 6. Launch your server: `rails s`
 
 <!-- Schema -->
@@ -50,11 +50,15 @@ To set up the project on your local machine, complete the following steps:
 ## API Endpoints
 #### Create a Tea Subscription for a Customer
 `POST /api/v1/subscribe`<br>
-<img width="444" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/add_subscription.png?raw=true">
+<img width="544" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/add_subscription.png?raw=true">
 <br>
 
 `GET /api/v1/subscriptions/1`<br>
-<img width="444" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/get_all_subscriptions.png?raw=true">
+<img width="544" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/get_all_subscriptions.png?raw=true">
 <br>
 
 `DELETE /api/v1/unsubscribe`<br>
+<img width="544" alt="location" src="https://github.com/gwen-marina/tea_subscription/blob/main/repo_images/delete_subscription.png?raw=true">
+<br>
+
+
