@@ -49,7 +49,7 @@ RSpec.describe 'Customer Subscription API' do
 
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    post "/api/v1/unsubscribe", headers: headers, params: JSON.generate(customer_subscriptions: subscription_params)
+    patch "/api/v1/unsubscribe", headers: headers, params: JSON.generate(customer_subscriptions: subscription_params)
 
     expect(response).to be_successful
     expect(response.status).to eq(204)

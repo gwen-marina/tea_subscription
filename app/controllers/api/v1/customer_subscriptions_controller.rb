@@ -18,7 +18,7 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     customer_subscription = CustomerSubscription.find_by(customer_id: params[:customer_subscriptions][:customer_id], subscription_id: params[:customer_subscriptions][:subscription_id])
     customer_subscription.subscription.status = 'canceled'
     customer_subscription.subscription.update(status: params[:customer_subscriptions][:status])
-    render status: 204, json: { message: "Your subscription has been deleted" }
+    render json: { message: 'Your subscription has been canceled' }
   end
 
     private
