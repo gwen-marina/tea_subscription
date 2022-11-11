@@ -52,7 +52,7 @@ RSpec.describe 'Customer Subscription API' do
     patch "/api/v1/unsubscribe", headers: headers, params: JSON.generate(customer_subscriptions: subscription_params)
 
     expect(response).to be_successful
-    expect(response.status).to eq(204)
+    expect(response.status).to eq(200)
     expect(response.status).to_not eq(201)   
   end
 
